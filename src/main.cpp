@@ -79,3 +79,8 @@ int main() {
 
     return 0;
 }
+
+double redundancyPenalty(const std::string& a, const std::string& b) {
+    if (a == b) return 1.0;
+    return 0.0; // placeholder — extend to cosine similarity later
+}
