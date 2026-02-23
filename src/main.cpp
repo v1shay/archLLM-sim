@@ -21,3 +21,8 @@ struct Message {
     double density;
 };
 
+double computeImportance(const std::string& text, int recencyIndex) {
+    double entropyProxy = std::log(text.length() + 1);
+    double recencyWeight = std::exp(-0.15 * recencyIndex);
+    return entropyProxy * recencyWeight;
+}
