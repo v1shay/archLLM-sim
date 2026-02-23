@@ -58,3 +58,24 @@ std::vector<Message> compressContext(
 
     return selected;
 }
+
+int main() {
+    std::vector<std::string> conversation = {
+        "User wants help designing LLM memory compression.",
+        "Discussion about entropy-based scoring methods.",
+        "Irrelevant tangent about weather conditions.",
+        "Important constraint: preserve key system architecture decisions.",
+        "Token limit is strictly enforced at 100 tokens."
+    };
+
+    int tokenBudget = 60;
+
+    auto compressed = compressContext(conversation, tokenBudget);
+
+    std::cout << "=== Selected Context ===\n";
+    for (auto& msg : compressed) {
+        std::cout << "- " << msg.content << "\n";
+    }
+
+    return 0;
+}
