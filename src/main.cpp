@@ -14,3 +14,10 @@ t_i = token cost
 B   = context window constraint
 */
 
+struct Message {
+    std::string content;
+    int tokens;
+    double importance;
+    double density;
+};
+
